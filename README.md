@@ -1,7 +1,10 @@
 # Convex-optimization
 Introduction:
 
-       The objective of this project is to learn convex optimization and focusing on its real world modelling problems. Solving them computationally using CVXPY.  The emphasis is on understanding optimization variables, objectives, constraints, and practical implementations rather than mathematical proofs.
+The objective of this project is to learn convex optimization and focusing on its real world modelling problems.
+Solving them computationally using CVXPY.  The emphasis is on understanding optimization variables, objectives, constraints, and practical implementations rather than mathematical proofs.
+
+
 
 Topics Studied:
 
