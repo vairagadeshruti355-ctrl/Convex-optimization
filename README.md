@@ -25,4 +25,10 @@ Studying convexity rules, linear programming , Qudratic programming , optimizati
 
 
 Week 3:
-Understanding commom convex functions, Norms, Quadratics, composition rules, understanding why CVXPY accepts/rejects expression
+Understanding commom convex functions, Norms, Quadratics, composition rules, understanding why CVXPY accepts/rejects expression, experimenting with CVXPY expressions, learning disciplined convex programming.
+
+
+
+
+Week 4:
+Understanding how optimization appears in machine learning and scientific modelling, studied topics like least squares, ridge regression, sparse regression(LASSO) and regularization.
