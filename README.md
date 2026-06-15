@@ -13,7 +13,7 @@ Topics Studied:
 
 
 Week 1:
-Optimization problems , convex sets , convex functions , basic constrained optimization , introduction to CVXPY , solving least square problems, understanding its geometric intuition, and being able to recognize what convex optimization problems look like.
+Optimization problems , convex sets , convex functions , basic constrained optimization , introduction to CVXPY , solving least square problems, understanding its geometric intuition, and being able to recognize how convex optimization problems look like.
 
 
 
