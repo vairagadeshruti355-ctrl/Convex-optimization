@@ -16,7 +16,7 @@ The only valid constraints under the DCP rules are:
                                               1.  affine == affine
                                               2.  convex <= concave
                                               3.  concave >= convex'''
-
+import cvxpy as cp
 x = cp.Variable()
 y = cp.Variable()
 
