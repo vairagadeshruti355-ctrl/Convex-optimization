@@ -22,7 +22,7 @@ where RSS is:
 # Basic problem based on ridge regression
 
 import cvxpy as cp
-X = variable(5)
+X = cp.Variable(5)
 beta = [2, 5, 3, 4, 8]
 y = cp.Variable()         # error
 
