@@ -21,16 +21,25 @@ where RSS is:
 
 # Basic problem based on ridge regression
 
+# Q1 ridge regression
 import cvxpy as cp
-X = cp.Variable(5)
-beta = [2, 5, 3, 4, 8]
-y = cp.Variable()         # error
+import numpy as np
+X = np.array([
+    [1, 2, 3, 4, 5],
+    [2, 1, 0, 1, 2],
+    [3, 2, 1, 0, 1],
+    [1, 1, 1, 1, 1]
+])
+beta = cp.Variable(5)
+y = np.array([10, 5, 6, 4])
+lam = 0.5
 
-objective = cp.Minimize(cp.sum_squares(X @ beta.T - y) + lam * cp.sum_squares(beta))
+objective = cp.Minimize(cp.sum_squares(X @ beta.T - y) + lam*cp.sum_squares(beta))
 problem = cp.Problem(objective)
 
 problem.solve()
-print("optimal value: ", problem.value)
+print("ans: ",problem.value)
+
 
 #2. LASSO Regression (L1 Regularization)
 
@@ -53,16 +62,24 @@ Given a matrix A∈R^m×n and a vector b∈R^m, find x∈R^n that solves x
 3.∥x∥1 promotes sparsity,
 4.λ>0 controls the amount of regularization.'''
 
+#Q2 LASSO Regression
 import cvxpy as cp
-
-x = cp.Variable(n)
-
-objective = cp.Minimize(cp.sum_squares(A @ x - b) + lam * cp.norm1(x))
-
+import numpy as np
+x = cp.Variable(3)
+A = np.array([
+    [1, 2, 3],
+    [2, 1, 0],
+    [1, 1, 1],
+    [3, 2, 1]
+])
+b = np.array([10, 5, 4, 8])
+lam = 0.5
+objective = cp.Minimize(cp.sum_squares(A @ x.T - b) + lam*cp.norm1(x))
 problem = cp.Problem(objective)
-problem.solve()
 
-print("Optimal value: ",problem.value)
+problem.solve()
+print("ans: ",problem.value)
+
 
 
 '''Sparse Regression
@@ -92,24 +109,27 @@ The optimum usually touches the smooth boundary away from the axes. '''
 
 
                                      subject to     ∥β∥(1) ≤5'''
+#Q3 sparse regression
+
 import cvxpy as cp
-X = cp.Variable(5)
+import numpy as np
+
+X = np.array([
+    [1 ,2 , 3, 4, 5],
+    [2, 1, 0, 1, 2],
+    [3, 2, 1, 0, 1]
+]) 
 beta = cp.Variable(5)
-y = cp.Variable()             # error
+y = np.array([10, 5, 6])
 
-objective = cp.Minimize(
-    cp.sum_squares(X @ beta.T - y)
-)
+objective = cp.Minimize(cp.sum_squares(X @ beta.T - y))
 
-constraints = [
-    cp.norm(beta, 1) <= 5
-]
+constraints = [cp.norm(beta, 1) <= 5]
 
 problem = cp.Problem(objective, constraints)
+
 problem.solve()
 
-print("Optimal value: ",problem.value)
-
-
+print("Ans", problem.value)
 
 
