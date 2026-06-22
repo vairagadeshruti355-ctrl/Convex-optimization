@@ -33,5 +33,3 @@ Understanding how optimization appears in machine learning and scientific modell
 
 
 
-### This github report consist all weeks work with problem statements and short explaination along with google colab notebook which have all this code in executed form along with there output in the all_week_code.ipynb
-
